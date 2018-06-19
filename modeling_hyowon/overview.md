@@ -5,13 +5,11 @@ Overview
 [kaggle Link](https://www.kaggle.com/c/walmart-recruiting-sales-in-stormy-weather)
 
 #### 목적
-predict the sales of 111 potentially weather-sensitive products (like umbrellas, bread, and milk : around the time of major weather events at 45 of their retail locations
+predict the sales of 111 potentially weather-sensitive products (like umbrellas, bread, and milk) around the time of major weather events at 45 of their retail locations
 
 
 #### 모델의 평가기준
-√ 1/n∑(log(pi+1 :-log(ai+1 : :2
-
-n개의 상품에 대해서 log(해당 상품의 예측판매량+1 :과 log(해당 상품의 실제판매량+1 :의 잔차 제곱 평균의 제곱근을 구하여 평가한다.
+n개의 상품에 대해서 log(해당 상품의 예측판매량+1)과 log(해당 상품의 실제판매량+1)의 표준편차
 
 ##### Field descriptions
 - date : 2012-01-01 ~ 2012-06-12
@@ -19,7 +17,7 @@ n개의 상품에 대해서 log(해당 상품의 예측판매량+1 :과 log(해�
 - station_nbr : 20개 기상관측소
 - item_nbr : 111개 상품
 - units : 일별 판매량
-- id : store_nbr + item_nbr + date (ex. 2_1_2013-04-01 :
+- id : store_nbr + item_nbr + date (ex. 2_1_2013-04-01)
 
 ##### File descriptions
 
@@ -40,18 +38,18 @@ COLUMN TERMINOLOGY
 1.  DATE
 
 Temp Degrees Fahrenheit
-2. MAXIMUM (최고기온 :
-3. MINIMUM (최저기온 :
-4. AVERAGE (평균기온 :
+2. MAXIMUM (최고기온)
+3. MINIMUM (최저기온)
+4. AVERAGE (평균기온)
 5. DEPARTURE FROM NORMAL
-6. AVERAGE DEW POINT (평균 이슬점 :
-7. AVERAGE WET BULB (평균 습구 :
+6. AVERAGE DEW POINT (평균 이슬점)
+7. AVERAGE WET BULB (평균 습구)
 
 Degree Days: Base 65 F
-8. HEATING (SEASON BEGINS WITH JULY :
-9. COOLING (SEASON BEGINS WITH JANUARY :
-10. SUNRISE (Calculated, not observed : (일출 :
-11. SUNSET (Calculated, not observed : (일몰 :
+8. HEATING (SEASON BEGINS WITH JULY)
+9. COOLING (SEASON BEGINS WITH JANUARY)
+10. SUNRISE (Calculated, not observed) (일출)
+11. SUNSET (Calculated, not observed) (일몰)
 
 Significant Weather Types Weather Phenomena
 12. - +FC TORNADO/WATERSPOUT
