@@ -6,6 +6,7 @@ Predict how sales of weather-sensitive products are affected by snow and rain(Us
 - Danial Nam [Team Leader]
 - HyoWon Jang
 - Joseph Ahn
+- HanJin Hwang
 
 ### Project descriptions
 
