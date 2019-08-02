@@ -3,10 +3,15 @@
 Predict how sales of weather-sensitive products are affected by snow and rain(Used data on Kaggle).
 
 ### Team Name : Saletimation
-- Danial Nam [Team Leader]
-- HyoWon Jang
+
+- Hyowon Jang
+- Danial Nam
 - Joseph Ahn
 - HanJin Hwang
+
+### Evaluation
+
+$\sqrt{\frac{1}{n} \sum_{i=1}^n (\log(p_i + 1) - \log(a_i+1))^2 }$
 
 ### Project descriptions
 
@@ -16,6 +21,13 @@ Predict how sales of weather-sensitive products are affected by snow and rain(Us
 More details check out the link : [Walmart Recruiting II: Sales in Stormy Weather](https://www.kaggle.com/c/walmart-recruiting-sales-in-stormy-weather)
 
 ### Data Description
+
+- key.csv
+- sampleSubmission.csv
+- test.csv
+- train.csv
+- weather.csv
+- noaa_weather_qclcd_documentation.pdf
 
 날씨에 영향을 받을만한 아이템(우유, 빵, 우산 등) 111가지를 받았다. 총 45 Walmart지점에서 제공한 데이터이며, 같은 아이템이지만 지점마다 다른 id로 표시된 경우가 있으니 주의하자. 45개의 지점들은 20 곳의 기상청의 날씨에 의존하여 데이터를 작성하였다(지리적으로 가까운 지점끼리는 같은 기상청의 날씨를 공유했다).
 
@@ -30,6 +42,7 @@ More details check out the link : [Walmart Recruiting II: Sales in Stormy Weathe
 More details check out the link : [Data Description ](https://www.kaggle.com/c/walmart-recruiting-sales-in-stormy-weather/data)
 
 ### Field descriptions
+
 - date - the day of sales or weather
 - store_nbr - an id representing one of the 45 stores
 - station_nbr - an id representing one of 20 weather stations
@@ -39,9 +52,75 @@ More details check out the link : [Data Description ](https://www.kaggle.com/c/w
 
 ### File descriptions
 
-- key.csv - the relational mapping between stores and the weather stations that cover them
-- sampleSubmission.csv - file that gives the prediction format
 - train.csv - The training set
+
+  - shape : 4,617,600 rows x 4 columns
+  - columns
+
+    | columns   | null data | data type |
+    | --------- | --------- | --------- |
+    | date      | non-null  | object    |
+    | store_nbr | non-null  | int64     |
+    | item_nbr  | non-null  | int64     |
+    | units     | non-null  | int64     |
+
 - test.csv - The test set
+
+  - shape : 526,917 rows x 3 columns
+  - columns
+
+    | columns   | null data | data type |
+    | --------- | --------- | --------- |
+    | date      | non-null  | object    |
+    | store_nbr | non-null  | int64     |
+    | item_nbr  | non-null  | int64     |
+
+- key.csv - the relational mapping between 'store_nbr' and 'station_nbr'
+
+  - shape : 45 rows x 2 columns
+  - columns
+
+    | columns     | null data | data type |
+    | ----------- | --------- | --------- |
+    | store_nbr   | non-null  | int64     |
+    | station_nbr | non-null  | int64     |
+
 - weather.csv - a file containing the NOAA weather information for each station and day
-- noaa_weather_qclcd_documentation.pdf - a guide to understand the data provided in the weather.csv file
+
+  - shape : 20,517 rows x 20 columns
+  - columns(\* null data exiest)
+
+    | columns     | null data | data type |
+    | ----------- | --------- | --------- |
+    | station_nbr | non-null  | object    |
+    | date        | non-null  | object    |
+    | tmax        | non-null  | object    |
+    | tmin        | non-null  | object    |
+    | tavg        | non-null  | object    |
+    | depart      | non-null  | object    |
+    | dewpoint    | non-null  | object    |
+    | wetbulb     | non-null  | object    |
+    | heat        | non-null  | object    |
+    | cool        | non-null  | object    |
+    | sunrise     | non-null  | object    |
+    | sunset      | non-null  | object    |
+    | codesum     | non-null  | object    |
+    | snowfall    | non-null  | object    |
+    | preciptotal | non-null  | object    |
+    | stnpressure | non-null  | object    |
+    | sealevel    | non-null  | object    |
+    | resultspeed | non-null  | object    |
+    | resultdir   | non-null  | object    |
+    | avgspeed    | non-null  | object    |
+
+* sampleSubmission.csv - file that gives the prediction format
+
+  - shape : 526,917 rows x 2 columns
+  - columns
+
+    | columns | null data | data type |
+    | ------- | --------- | --------- |
+    | id      | non-null  | object    |
+    | units   | non-null  | int64     |
+
+* noaa_weather_qclcd_documentation.pdf - a guide to understand the data provided in the weather.csv file
